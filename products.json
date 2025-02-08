@@ -30,5 +30,13 @@
         "brand": "ChargeMaster",
         "category": "Accessories",
         "entry_date": "2024-07-01"
+    },
+    {
+        "name": "Wireless Charger",
+        "price": 75,
+        "quantity": 100,
+        "brand": "ChargerMaster",
+        "category": "Accesories",
+        "entry_date": "2024-07-01"
     }
 ]
