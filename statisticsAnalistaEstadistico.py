@@ -14,4 +14,8 @@ sales = list(monthly_sales.values())
 print(sales)
 
 #--------------------------------------------------------------
+#Hallar la media
+
+mean_sales = statistics.mean(sales)
+print(f"La media es: {mean_sales}")
 
