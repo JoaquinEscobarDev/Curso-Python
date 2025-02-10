@@ -43,3 +43,16 @@ print(f"Desviacion estandar: {stdev_sales}")
 mode_sales = statistics.variance(sales)
 print(f"La varianza es: {mode_sales}")
 
+#--------------------------------------------------------------
+#Maximo y Minimo
+
+max_sales = max(sales)
+min_sales = min(sales)
+
+#--------------------------------------------------------------
+#rango 
+
+range_sales = max_sales - min_sales
+print(f"Rango de ventas: {range_sales}")
+
+
