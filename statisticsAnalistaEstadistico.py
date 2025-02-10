@@ -30,3 +30,16 @@ print(f"La media es: {mean_sales}")
 
 mean_sales = statistics.mode(sales)
 print(f"La moda es: {mean_sales}")
+
+#--------------------------------------------------------------
+#Desviacion de ventas
+
+stdev_sales = statistics.stdev(sales)
+print(f"Desviacion estandar: {stdev_sales}")
+
+#--------------------------------------------------------------
+#Hallar varianza
+
+mode_sales = statistics.variance(sales)
+print(f"La varianza es: {mode_sales}")
+
