@@ -38,34 +38,58 @@
 
 #-------------------------------------------------------------------------------------------------
 
-import math
+# import math
 
-# Calcular la raíz cuadrada
-print("Raíz cuadrada de 16:", math.sqrt(16))
+# # Calcular la raíz cuadrada
+# print("Raíz cuadrada de 16:", math.sqrt(16))
 
-# Calcular el seno de un ángulo (en radianes)
-print("Seno de pi/2:", math.sin(math.pi / 2))
+# # Calcular el seno de un ángulo (en radianes)
+# print("Seno de pi/2:", math.sin(math.pi / 2))
 
-# Calcular el coseno de un ángulo (en radianes)
-print("Coseno de pi:", math.cos(math.pi))
+# # Calcular el coseno de un ángulo (en radianes)
+# print("Coseno de pi:", math.cos(math.pi))
 
-# Calcular el logaritmo natural
-print("Logaritmo natural de 10:", math.log(10))
+# # Calcular el logaritmo natural
+# print("Logaritmo natural de 10:", math.log(10))
 
-# Calcular el logaritmo en base 10
-print("Logaritmo base 10 de 100:", math.log10(100))
+# # Calcular el logaritmo en base 10
+# print("Logaritmo base 10 de 100:", math.log10(100))
 
-# Calcular el valor absoluto
-print("Valor absoluto de -20:", math.fabs(-20))
+# # Calcular el valor absoluto
+# print("Valor absoluto de -20:", math.fabs(-20))
 
-# Calcular el factorial de un número
-print("Factorial de 5:", math.factorial(5))
+# # Calcular el factorial de un número
+# print("Factorial de 5:", math.factorial(5))
 
-# Calcular la potencia
-print("2 elevado a 3:", math.pow(2, 3))
+# # Calcular la potencia
+# print("2 elevado a 3:", math.pow(2, 3))
 
-# Redondear hacia arriba
-print("Redondear 4.3 hacia arriba:", math.ceil(4.3))
+# # Redondear hacia arriba
+# print("Redondear 4.3 hacia arriba:", math.ceil(4.3))
 
-# Redondear hacia abajo
-print("Redondear 4.7 hacia abajo:", math.floor(4.7))
+# # Redondear hacia abajo
+# print("Redondear 4.7 hacia abajo:", math.floor(4.7))
+
+#-------------------------------------------------------------------------------------------------
+
+import random
+
+# Generar un número aleatorio entre 0 y 1
+print("Número aleatorio entre 0 y 1:", random.random())
+
+# Generar un número entero aleatorio entre dos valores
+print("Número entero aleatorio entre 1 y 10:", random.randint(1, 10))
+
+# Seleccionar un elemento aleatorio de una lista
+lista = ['a', 'b', 'c', 'd', 'e']
+print("Elemento aleatorio de la lista:", random.choice(lista))
+
+# Barajar una lista
+random.shuffle(lista)
+print("Lista barajada:", lista)
+
+# Generar un número aleatorio flotante entre dos valores
+print("Número flotante aleatorio entre 1.5 y 5.5:", random.uniform(1.5, 5.5))
+
+# Seleccionar una muestra aleatoria de una lista
+print("Muestra aleatoria de 3 elementos de la lista:", random.sample(lista, 3))
