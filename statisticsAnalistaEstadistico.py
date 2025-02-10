@@ -20,6 +20,12 @@ mean_sales = statistics.mean(sales)
 print(f"La media es: {mean_sales}")
 
 #--------------------------------------------------------------
+#Hallar la mediana
+
+mean_sales = statistics.median(sales)
+print(f"La media es: {mean_sales}")
+
+#--------------------------------------------------------------
 #Hallar la moda
 
 mean_sales = statistics.mode(sales)
