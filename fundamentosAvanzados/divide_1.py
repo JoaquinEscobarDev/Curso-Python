@@ -16,7 +16,7 @@ def divide(a:int, b: int) -> float:
 try: 
     res = divide(10,'2') #Error de tipo
     print(res)
-except TypeError as e:
+except (ValueError, TypeError) as e:
     print(f'Error: {e}')
     
 
