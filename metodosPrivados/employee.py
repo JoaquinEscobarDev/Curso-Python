@@ -15,6 +15,13 @@ class Employee:
         if new_salary < 0:
             raise ValueError("El salario no puede ser negativo")
         self._salary = new_salary
+        
+        
+    @salary.deleter
+    def salary(self):
+        print(f'The salary of {self.name} has been deleted')
+        del self._salary
+        
 
 # Crea una instancia de la clase Employee con nombre "Ana" y salario 5000
 employee = Employee("Ana", 5000)
@@ -29,3 +36,6 @@ print(employee.salary)
 # Intenta establecer un salario negativo (comentado porque lanzaría una excepción)
 # employee.salary = -1000
 # print(employee.salary)
+
+# Elimina el salario 
+del employee.salary
