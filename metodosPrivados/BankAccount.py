@@ -1,48 +1,54 @@
 #Implementar una clase CuentaBancaria con un metodo proegido pr ctulizr el sldo y un metodo 
 #privado par registrar las transacciones internamente
+#el metodo protegido(_actualizar_saldo) solo debe ser utilizado dentro de la clase y sus subclases
+#el metodo provado (__registrar_transaccion) debe ser completamente interno y no accesible fuera de la clase
 
-class BankAccount:
-    def __init__(self, initial_balance=0):
-        # Inicializa la cuenta bancaria con un saldo inicial y una lista de transacciones
-        self._balance = initial_balance
-        self.__transactions = []
+class CuentaBancaria:
+    def __init__(self, saldo_inicial):
+        # Inicializa la cuenta bancaria con un saldo inicial
+        self.saldo = saldo_inicial
+        self.__transacciones = []
 
-    def deposit(self, amount):
-        # Verifica que el monto a depositar sea positivo
-        if amount > 0:
-            # Incrementa el saldo con el monto del depósito
-            self._balance += amount
-            # Registra la transacción como un depósito
-            self.__record_transaction('deposit', amount)
+    def depositar(self, cantidad):
+        # Método público para depositar dinero en la cuenta
+        self._actualizar_saldo(cantidad)
+        self.__registrar_transaccion('Depósito', cantidad)
 
-    def withdraw(self, amount):
-        # Verifica que el monto a retirar sea positivo y no exceda el saldo actual
-        if 0 < amount <= self._balance:
-            # Deduce el monto del saldo
-            self._balance -= amount
-            # Registra la transacción como un retiro
-            self.__record_transaction('withdraw', amount)
+    def retirar(self, cantidad):
+        # Método público para retirar dinero de la cuenta
+        if cantidad <= self.saldo:
+            self._actualizar_saldo(-cantidad)
+            self.__registrar_transaccion('Retiro', cantidad)
+        else:
+            print("Saldo insuficiente")
 
-    def get_balance(self):
-        # Retorna el saldo actual de la cuenta
-        return self._balance
-
-    def _update_balance(self, amount):
+    def _actualizar_saldo(self, cantidad):
         # Método protegido para actualizar el saldo
-        self._balance += amount
+        self.saldo += cantidad
 
-    def __record_transaction(self, transaction_type, amount):
-        # Método privado para registrar las transacciones internamente
-        self.__transactions.append({'type': transaction_type, 'amount': amount})
+    def __registrar_transaccion(self, tipo, cantidad):
+        # Método privado para registrar una transacción
+        self.__transacciones.append({'tipo': tipo, 'cantidad': cantidad})
 
-    def get_transactions(self):
-        # Retorna la lista de transacciones
-        return self.__transactions
+    def obtener_saldo(self):
+        # Método público para obtener el saldo actual
+        return self.saldo
 
-# Prueba de la clase BankAccount
+    def obtener_transacciones(self):
+        # Método público para obtener el historial de transacciones
+        return self.__transacciones
+
+# Prueba funcional
 if __name__ == "__main__":
-    account = BankAccount(100)  # Crea una cuenta con un saldo inicial de 100
-    account.deposit(50)         # Deposita 50 en la cuenta
-    account.withdraw(30)        # Retira 30 de la cuenta
-    print("Balance:", account.get_balance())  # Imprime el saldo actual
-    print("Transactions:", account.get_transactions())  # Imprime la lista de transacciones
+    cuenta = CuentaBancaria(1000)
+    print("Saldo inicial:", cuenta.obtener_saldo())
+    
+    cuenta.depositar(500)
+    print("Saldo después del depósito:", cuenta.obtener_saldo())
+    
+    cuenta.retirar(200)
+    print("Saldo después del retiro:", cuenta.obtener_saldo())
+    
+    cuenta.retirar(1500)  # Intento de retiro con saldo insuficiente
+    
+    print("Historial de transacciones:", cuenta.obtener_transacciones())
