@@ -1,3 +1,6 @@
+#El uso de Lock asegura que solo un hilo modifique
+#la variable saldo en un momento dado, evitando que el resultado final sea incorrecto.
+
 import threading
 
 # Variable compartida
